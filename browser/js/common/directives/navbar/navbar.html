@@ -1,0 +1,13 @@
+<nav class="navbar navbar-static-top">
+    <div class="navbar-header">
+    </div>
+    <ul class="nav navbar-nav">
+        <li ng-repeat="team in teams">
+            <div ng-click="teamPage(team)" class="team-container">
+                <img class="team-image img-circle" ng-src={{team.picture}} />
+            </div>
+            <p>{{team.name}}</p>
+
+        </li>
+    </ul>
+</nav>

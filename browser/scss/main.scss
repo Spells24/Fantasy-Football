@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #fdfdfd;
+}
+
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+#main {
+  width: 100vw;
+  margin: 0 auto;
+}
+
+@import 'directives/main';
+@import 'home/main';
+@import 'team/main';

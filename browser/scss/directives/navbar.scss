@@ -1,0 +1,68 @@
+navbar {
+
+  display: block;
+  background: white;
+  box-shadow: 1px 1px 14px -3px black;
+
+  .container {
+    width: 91%;
+    max-width: 1340px;
+    padding-top: 20px;
+  }
+
+  p {
+    font-size: 10px;
+    width: 8.333333vw;
+    text-align: center;
+    color: white;
+  }
+
+  li {
+    background: rgba(98,125,77,1);
+    background: -moz-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(31,59,8,1) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(98,125,77,1)), color-stop(100%, rgba(31,59,8,1)));
+    background: -webkit-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(31,59,8,1) 100%);
+    background: -o-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(31,59,8,1) 100%);
+    background: -ms-linear-gradient(left, rgba(98,125,77,1) 0%, rgba(31,59,8,1) 100%);
+    background: linear-gradient(to right, rgba(98,125,77,1) 0%, rgba(31,59,8,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#1f3b08', GradientType=1 );
+    position: absolute;
+    transition: all .5s ease-in-out;
+    z-index: 1;    
+    &:hover {
+      z-index: 2;
+      transform: scale(1.4);
+    }
+  }
+  .navbar {
+    margin: 0px;
+  }
+  .team-image {
+    width: 90%;
+    height: 100px; 
+  }
+
+  .team-container {
+    width: 8.333333vw;
+  }
+
+  a {
+    color: black;
+    font-size: 16px;
+  }
+
+  .nav > li > a {
+    cursor: pointer;
+    transition: color 0.2s;
+    &.active {
+      color: darken(#f31214, 10%);
+    }
+    &:hover {
+      background: none;
+      color: #f31214;
+    }
+    &:focus {
+      background: none;
+    }
+  }
+}

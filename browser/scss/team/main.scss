@@ -1,0 +1,37 @@
+.baller{
+	background-color: lighten(#364824, 10%);
+	th { color: white;}
+}
+
+.mytable {
+	margin-bottom: 0px;
+}
+
+.slot {
+	width:53px !important;
+}
+.name {
+	width:160px !important;
+}
+.team {
+	width:5vw !important;
+}
+.position {
+	width:7vw !important;
+}
+.opp {
+	width:5vw !important;
+}
+.gameStatus {
+	width:8vw !important;
+}
+.pts {
+	width: 50px !important;
+	padding-left: 40px !important;
+	padding-right: 40px !important;
+	font-weight: 900;
+	text-align: center;
+}
+.no-pad {
+	padding-right: 0 !important;
+}
