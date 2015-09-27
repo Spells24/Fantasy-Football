@@ -1,12 +1,12 @@
 <div class="row">
 	<div class="col-sm-6">
-		<h1>{{team.name}}</h3>
-		<h5>{{team.user}}</h5>
+		<h1>{{selectedTeam.name}}</h3>
+		<h5>{{selectedTeam.user}}</h5>
 	</div>
-	<div class="no-pad col-sm-6">
+	<div class="col-sm-6">
 		<h3>Team Stats</h3>
-		<h4>{{team.record}}</h4>
-		<h4>{{team.standing}}</h4>
+		<h4>{{selectedTeam.record}}</h4>
+		<h4>{{selectedTeam.standing}}</h4>
 	</div>
 </div>
 <table class="table table-striped table-bordered mytable">
@@ -16,20 +16,8 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="player in players | regPlayer">
+		<tr ng-repeat="player in filteredRegPlayers = (players | regPlayer | teamPlayer:selectedTeam._id)">
 			<td class="{{cat}}" ng-repeat="cat in regCats">{{player[cat]}}</td>
-		</tr>
-	</tbody>
-</table>
-<table class="table table-striped table-bordered mytable">
-	<thead>
-		<tr class="baller">
-			<th class = "{{cat}}" ng-repeat="cat in dCats">{{cat}}</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr ng-repeat="player in players | DPlayer">
-			<td class="{{cat}}" ng-repeat="cat in dCats">{{player[cat]}}</td>
 		</tr>
 	</tbody>
 </table>
@@ -40,8 +28,32 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr ng-repeat="player in players | KPlayer">
+		<tr ng-repeat="player in filteredKPlayers = (players | KPlayer | teamPlayer:selectedTeam._id)">
 			<td class="{{cat}}" ng-repeat="cat in kCats">{{player[cat]}}</td>
+		</tr>
+	</tbody>
+</table>
+<table class="table table-striped table-bordered mytable">
+	<thead>
+		<tr class="baller">
+			<th class = "{{cat}}" ng-repeat="cat in dCats">{{cat}}</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="player in filteredDPlayers = (players | DPlayer | teamPlayer:selectedTeam._id)">
+			<td class="{{cat}}" ng-repeat="cat in dCats">{{player[cat]}}</td>
+		</tr>
+	</tbody>
+</table>
+<table class="pull-right table-striped table-bordered">
+	<thead>
+		<tr class="baller">
+			<th class="totalpoints">Total Points</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="totalpointstext">{{total(filteredDPlayers,filteredKPlayers,filteredRegPlayers)}}</td>
 		</tr>
 	</tbody>
 </table>

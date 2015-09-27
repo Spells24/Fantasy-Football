@@ -2,7 +2,16 @@
 	background-color: lighten(#364824, 10%);
 	th { color: white;}
 }
-
+.totalpoints{
+	padding-left: 40px;
+	padding-right: 60px;
+	font-size: 20px
+}
+.totalpointstext{
+	font-size:17px;
+	font-weight: bold;
+	text-align: center;
+}
 .mytable {
 	margin-bottom: 0px;
 }

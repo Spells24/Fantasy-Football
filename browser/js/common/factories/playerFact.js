@@ -5,14 +5,11 @@ app.factory('PlayerFactory', function ($http) {
         .then(function(res){
             return res.data;
         });
-    };
-    var getPlayersByTeam = function(team){
-        return $http.get('/api/players/team/'+team._id)
-        .then(function(res){
-            return res.data;
-        });
+
     };
 
+
+    //Helper
     var orderPlayers = function(players){
         var pos = ['QB','RB','RB','WR','WR','TE','FLEX','K','D/ST'];
         var newArr = [];
@@ -27,12 +24,19 @@ app.factory('PlayerFactory', function ($http) {
         }
         return newArr;
     };
+ 
+    var getPtTotal = function(players){
+        var x = 0;
+        players.forEach(function(player){
+            x+=player.pts;
+        });
+        return x;
+    };
 
 
     return {
-        orderPlayers,
-        getPlayers,
-        getPlayersByTeam
+        getPtTotal,
+        getPlayers
         };
 
 });

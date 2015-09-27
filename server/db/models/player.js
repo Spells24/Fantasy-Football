@@ -2,9 +2,9 @@
 var mongoose = require('mongoose');
 
 function setToNum(val){
-    if(!val || typeof val == "string")
+    if(!val || val == "--")
         return 0;
-    else return val;
+    else return Number(val);
 }
 
 
